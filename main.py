@@ -1,7 +1,8 @@
 from load_GTZAN_data import load_all_data
+from load_GTZAN_data import make_gatzan_img_data
 
-print("hello")
-data = load_all_data()
+make_gatzan_img_data()
+#data = load_all_data()
 # print(list(data.keys()))
 
 # for genre, songs in data.items():
