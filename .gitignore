@@ -2,3 +2,5 @@ __pycache__/
 .DS_Store
 mel_spectrogram.png 
 Data/
+my_gatzan_cnn_model.h5
+.vscode/
