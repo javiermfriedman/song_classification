@@ -12,6 +12,7 @@ from get_audio_data import get_data_nexus
 from load_mel_data import load_data_nexus
 from cnn_model import model_builder_nexus, plot_history # Import plot_history as well
 from compile_train_model import compile_train_model_nexus # Import the new function
+from augment_data import augment_data_nexus
 
 
 def main():
@@ -22,9 +23,10 @@ def main():
         print("\nPlease choose an option:")
         print("1) Get new data")
         print("2) Turn current audio into mel spectrogram data")
-        print("3) Create and train a model")
-        print("4) Predict with model")
-        print("5) Exit")
+        print("3) Augment current data")
+        print("4) Create and train a model")
+        print("5) Predict with model")
+        print("6) Exit")
 
         choice = input("Enter your choice: ")
 
@@ -36,6 +38,10 @@ def main():
             audio_processing_nexus()
             print("Audio to mel spectrogram conversion finished.")
         elif choice == '3':
+            print("Augmenting data...")
+            augment_data_nexus()
+            print("Data augmentation finished.")
+        elif choice == '4':
             print("loading data")
             X_data, y_data = load_data_nexus()
             
@@ -63,9 +69,9 @@ def main():
             
             plot_history(history)
 
-        elif choice == '4':
-            print("Predicting with model... (Not implemented yet)")
         elif choice == '5':
+            print("Predicting with model... (Not implemented yet)")
+        elif choice == '6':
             print("Exiting.")
             break
         else:
